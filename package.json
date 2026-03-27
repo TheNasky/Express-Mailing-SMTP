@@ -1,22 +1,27 @@
 {
-  "name": "go-mailing-express-api",
+  "name": "mailing-express",
   "version": "1.0.0",
   "private": true,
-  "description": "Express clone of the Go mailing API with matching routes and behavior",
-  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "tsx watch src/server.ts",
+    "dev:vercel": "vercel dev",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "start": "node --enable-source-maps dist/server.js"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.2",
-    "mongodb": "^6.12.0",
-    "nodemailer": "^6.10.0",
-    "pino": "^9.5.0",
-    "resend": "^4.0.1"
+    "@upstash/qstash": "^2.8.2",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "resend": "^4.0.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.7.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vercel": "^37.14.0"
   }
 }
